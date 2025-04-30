@@ -1,67 +1,108 @@
-# MediPredict - Disease Prediction System
+# Disease Prediction System
 
-A machine learning-based disease prediction system with a Streamlit interface.
+A full-stack machine learning application that predicts possible diseases based on user-reported symptoms and vital signs.
 
-## Overview
+## Key Features
 
-MediPredict is an educational tool that demonstrates the application of machine learning algorithms in predicting potential diseases based on patient symptoms. The system uses a Random Forest classifier trained on a synthetic dataset of disease-symptom relationships.
+- Interactive symptom search and selection
+- Real-time BMI calculation and categorization
+- Machine learning-based disease prediction
+- Confidence scores for predictions
+- Interactive data visualizations
 
-## Features
+## Tech Stack
 
-- User-friendly interface for inputting patient symptoms
-- Machine learning model for disease prediction
-- Visualization of prediction results with probability scores
-- Information display about predicted diseases
-- Simple patient data management system
-- Responsive layout that works across different devices
+### Frontend
+- React 18 with TypeScript
+- Tailwind CSS
+- Recharts for visualization
+- Lucide React for icons
+- Vite for build tooling
 
-## Technical Stack
+### Backend
+- Python 3.8+
+- scikit-learn for ML
+- Pandas and NumPy for data processing
+- Streamlit as API layer
+- Plotly for advanced charting
 
-- **Python**: Core programming language
-- **Streamlit**: Web application framework for the UI
-- **Scikit-learn**: Machine learning library for the prediction model
-- **Pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing
-- **Matplotlib/Seaborn**: Data visualization
+## Getting Started
 
-## Installation
+### Prerequisites
+- Node.js 18+
+- Python 3.8+
+- npm or yarn
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/medipredict.git
-   cd medipredict
-   ```
+### Installation
 
-2. Create a virtual environment (recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/disease-prediction-system.git
+cd disease-prediction-system
+```
 
-3. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
+Install frontend dependencies:
+```bash
+npm install
+```
 
-4. Run the application:
-   ```
-   streamlit run app.py
-   ```
+Install backend dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-5. Open your browser and navigate to http://localhost:8501
+### Running the App
 
-## How It Works
+Start the frontend:
+```bash
+npm run dev
+```
 
-1. The system uses a machine learning model trained on a dataset of disease-symptom relationships
-2. Users input symptoms through a user-friendly interface
-3. The selected symptoms are processed and fed into the prediction model
-4. The model returns the most likely diseases along with their probability scores
-5. Results are displayed in an easy-to-understand format
+Start the backend:
+```bash
+python -m streamlit run app.py
+```
 
-## Disclaimer
+Access the app at `http://localhost:5173`
 
-This system is designed for educational purposes only and should not be used for actual medical diagnosis. Always consult with healthcare professionals for proper medical advice and treatment.
+## Project Structure
 
-## License
+```
+disease-prediction-system/
+├── src/            # Frontend source code
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── api/            # Backend (Python + ML model)
+│   └── model.py
+├── public/         # Static assets
+└── package.json    # Frontend dependencies
+```
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Feature Breakdown
+
+### Symptom Selection
+- Searchable and multi-select symptom input
+- Real-time filtering and usability focus
+
+### Vital Monitoring
+- Inputs for age, blood pressure, heart rate
+- BMI classification:
+  - Underweight (<18.5)
+  - Normal (18.5–24.9)
+  - Overweight (25–29.9)
+  - Obese (≥30)
+
+### Disease Prediction
+- Random Forest Classifier trained on health data
+- Uses symptoms, vitals, and measurements
+- Returns potential conditions with confidence levels
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/YourFeature`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to GitHub (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
